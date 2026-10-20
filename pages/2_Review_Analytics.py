@@ -44,22 +44,115 @@ if sample_reviews is None:
     st.info("Please run the pipeline script:\n```bash\npython scripts/run_pipeline.py\n```")
     st.stop()
 
-# Filters
-f_col1, f_col2, f_col3 = st.columns(3)
+# Filter State Management
+DEFAULT_CITY = "All Cities"
+DEFAULT_SENTIMENTS = []  # Empty means all sentiment categories
+DEFAULT_RATINGS = []     # Empty means all star ratings
+
+if "analytics_applied_city" not in st.session_state:
+    st.session_state.analytics_applied_city = DEFAULT_CITY
+if "analytics_applied_sentiments" not in st.session_state:
+    st.session_state.analytics_applied_sentiments = DEFAULT_SENTIMENTS
+if "analytics_applied_ratings" not in st.session_state:
+    st.session_state.analytics_applied_ratings = DEFAULT_RATINGS
+
 all_cities = ["All Cities"] + sorted(sample_reviews["City"].unique().tolist())
 
-with f_col1:
-    filter_city = st.selectbox("Filter City", all_cities)
-with f_col2:
-    filter_sentiment = st.multiselect("Sentiment Category", ["Positive", "Neutral", "Negative"], default=["Positive", "Neutral", "Negative"])
-with f_col3:
-    filter_rating = st.multiselect("Star Rating", [1.0, 2.0, 3.0, 4.0, 5.0], default=[1.0, 2.0, 3.0, 4.0, 5.0])
+with st.form("review_analytics_filter_form", clear_on_submit=False):
+    f_col1, f_col2, f_col3 = st.columns(3)
 
+    with f_col1:
+        current_city = st.session_state.analytics_applied_city
+        city_idx = all_cities.index(current_city) if current_city in all_cities else 0
+        input_city = st.selectbox(
+            "Filter City",
+            all_cities,
+            index=city_idx,
+            key="input_rev_city",
+            help="Select 'All Cities' to analyze nationwide reviews or pick a specific hub.",
+        )
+    with f_col2:
+        input_sentiment = st.multiselect(
+            "Sentiment Category (optional)",
+            ["Positive", "Neutral", "Negative"],
+            default=st.session_state.analytics_applied_sentiments,
+            key="input_rev_sentiment",
+            help="Leave empty to include all sentiment categories (Positive, Neutral, Negative).",
+            placeholder="All Sentiments (leave blank for all)",
+        )
+    with f_col3:
+        input_rating = st.multiselect(
+            "Star Rating (optional)",
+            [1.0, 2.0, 3.0, 4.0, 5.0],
+            default=st.session_state.analytics_applied_ratings,
+            key="input_rev_rating",
+            format_func=lambda r: f"{int(r)} ★" if r == int(r) else f"{r} ★",
+            help="Leave empty to include all star ratings (1.0 to 5.0).",
+            placeholder="All Ratings (leave blank for all)",
+        )
+
+    btn_col1, btn_col2 = st.columns([1, 1])
+    with btn_col1:
+        apply_clicked = st.form_submit_button(
+            "🔍 Apply Filters",
+            use_container_width=True,
+            type="primary",
+        )
+    with btn_col2:
+        reset_clicked = st.form_submit_button(
+            "🔄 Reset Filters",
+            use_container_width=True,
+            type="secondary",
+            help="Reset city to 'All Cities' and include all sentiments and star ratings.",
+        )
+
+# Handle Form Submissions
+if reset_clicked:
+    st.session_state.analytics_applied_city = DEFAULT_CITY
+    st.session_state.analytics_applied_sentiments = []
+    st.session_state.analytics_applied_ratings = []
+    # Clear form widget session keys so they re-initialize to defaults
+    if "input_rev_city" in st.session_state:
+        st.session_state.input_rev_city = DEFAULT_CITY
+    if "input_rev_sentiment" in st.session_state:
+        st.session_state.input_rev_sentiment = []
+    if "input_rev_rating" in st.session_state:
+        st.session_state.input_rev_rating = []
+    st.rerun()
+
+if apply_clicked:
+    st.session_state.analytics_applied_city = input_city
+    st.session_state.analytics_applied_sentiments = input_sentiment
+    st.session_state.analytics_applied_ratings = input_rating
+
+# Retrieve Applied Filters
+active_city = st.session_state.analytics_applied_city
+active_sentiments = st.session_state.analytics_applied_sentiments
+active_ratings = st.session_state.analytics_applied_ratings
+
+# Filter Dataframe
 filtered_df = sample_reviews.copy()
-if filter_city != "All Cities":
-    filtered_df = filtered_df[filtered_df["City"] == filter_city]
-filtered_df = filtered_df[filtered_df["sentiment_label"].isin(filter_sentiment)]
-filtered_df = filtered_df[filtered_df["Rating"].isin(filter_rating)]
+if active_city != "All Cities":
+    filtered_df = filtered_df[filtered_df["City"] == active_city]
+
+# If empty list, treat as "All" (unrestricted)
+if active_sentiments:
+    filtered_df = filtered_df[filtered_df["sentiment_label"].isin(active_sentiments)]
+
+if active_ratings:
+    filtered_df = filtered_df[filtered_df["Rating"].isin(active_ratings)]
+
+# Display active filter summary
+sent_desc = ", ".join(active_sentiments) if active_sentiments else "All Sentiments (Positive, Neutral, Negative)"
+rating_desc = ", ".join([f"{int(r)}★" for r in sorted(active_ratings)]) if active_ratings else "All Ratings (1.0–5.0★)"
+st.caption(
+    f"📌 **Active Scope:** City: **{active_city}** &nbsp;|&nbsp; "
+    f"Sentiment: **{sent_desc}** &nbsp;|&nbsp; "
+    f"Ratings: **{rating_desc}**"
+)
+
+if len(filtered_df) == 0:
+    st.warning("⚠️ No reviews match the chosen filter combination. Try adjusting or resetting your filters.")
 
 # Metric summary
 m1, m2, m3, m4 = st.columns(4)
