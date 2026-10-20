@@ -1,0 +1,110 @@
+{
+  "timestamp": "2026-10-20T10:10:43Z",
+  "tests": {
+    "city_rating_comparison": {
+      "test_name": "City-Wise Tourist Rating Comparison",
+      "null_hypothesis": "H0: The mean tourist ratings are identical across selected major cities.",
+      "alt_hypothesis": "H1: At least one city has a significantly different mean tourist rating.",
+      "significance_level": 0.05,
+      "selected_cities": [
+        "Mumbai",
+        "New Delhi",
+        "Bengaluru",
+        "Hyderabad",
+        "Agra"
+      ],
+      "group_summary": [
+        {
+          "city": "Mumbai",
+          "sample_size": 1505,
+          "mean_rating": 4.26,
+          "std_dev": 0.84
+        },
+        {
+          "city": "New Delhi",
+          "sample_size": 1222,
+          "mean_rating": 4.29,
+          "std_dev": 0.878
+        },
+        {
+          "city": "Bengaluru",
+          "sample_size": 989,
+          "mean_rating": 4.34,
+          "std_dev": 0.827
+        },
+        {
+          "city": "Hyderabad",
+          "sample_size": 739,
+          "mean_rating": 4.299,
+          "std_dev": 0.85
+        },
+        {
+          "city": "Agra",
+          "sample_size": 730,
+          "mean_rating": 4.296,
+          "std_dev": 0.841
+        }
+      ],
+      "assumptions": {
+        "levene_statistic": 0.6719,
+        "levene_p_value": 0.6114340132063827,
+        "equal_variances_assumed": true
+      },
+      "anova_results": {
+        "f_statistic": 1.3428,
+        "p_value": 0.251430493797004
+      },
+      "kruskal_results": {
+        "h_statistic": 7.1163,
+        "p_value": 0.12986785756576968
+      },
+      "recommended_test": "One-Way ANOVA",
+      "effect_size": {
+        "metric": "Eta-squared (\u03b7\u00b2)",
+        "value": 0.001
+      },
+      "decision": "Fail to Reject H0",
+      "interpretation": "At significance level \u03b1 = 0.05, we FAIL TO REJECT the null hypothesis. There is a statistically significant difference in tourist ratings among Mumbai, New Delhi, Bengaluru, Hyderabad, Agra. However, the effect size (\u03b7\u00b2 = 0.001) indicates that city location accounts for a small portion of rating variance."
+    },
+    "review_length_correlation": {
+      "test_name": "Review Length vs Tourist Rating Correlation",
+      "null_hypothesis": "H0: True correlation between review word count and rating is zero (\u03c1 = 0).",
+      "alt_hypothesis": "H1: True correlation between review word count and rating is non-zero (\u03c1 \u2260 0).",
+      "sample_size": 25000,
+      "significance_level": 0.05,
+      "spearman_rank_correlation": {
+        "rho": -0.0398,
+        "p_value": 3.0071059787204657e-10
+      },
+      "pearson_correlation": {
+        "r": -0.0408,
+        "p_value": 1.0590693948182625e-10
+      },
+      "decision": "Reject H0",
+      "interpretation": "At \u03b1 = 0.05, we REJECT the null hypothesis (p < 0.001). Spearman rank correlation is -0.040. Negative correlation demonstrates that dissatisfied visitors often write significantly longer explanatory reviews detailing grievances, whereas highly satisfied visitors tend to post concise praise."
+    },
+    "sentiment_rating_association": {
+      "test_name": "Sentiment Score Divergence (5-Star vs 1-Star)",
+      "null_hypothesis": "H0: Mean sentiment compound score of 5-star reviews \u2264 1-star reviews.",
+      "alt_hypothesis": "H1: Mean sentiment compound score of 5-star reviews > 1-star reviews.",
+      "sample_size_5_star": 11701,
+      "sample_size_1_star": 154,
+      "mean_sentiment_5_star": 0.562,
+      "mean_sentiment_1_star": -0.276,
+      "welch_t_test": {
+        "t_statistic": 23.577,
+        "p_value": 1.8734297349646371e-53
+      },
+      "mann_whitney_u_test": {
+        "u_statistic": 1665902.0,
+        "p_value": 3.5778551608150165e-74
+      },
+      "effect_size": {
+        "metric": "Cohen's d",
+        "value": 2.609
+      },
+      "decision": "Reject H0",
+      "interpretation": "At \u03b1 = 0.05, we REJECT the null hypothesis (t = 23.58, p < 0.001). 5-star reviews exhibit significantly higher positive sentiment (mean = 0.562) compared to 1-star reviews (mean = -0.276). Cohen's d of 2.609 confirms a large practical effect size, validating that the NLP sentiment model aligns strongly with explicit user star ratings."
+    }
+  }
+}

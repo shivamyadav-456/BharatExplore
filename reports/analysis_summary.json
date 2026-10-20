@@ -1,0 +1,216 @@
+{
+  "analysis_timestamp": "2026-10-20T10:10:14Z",
+  "duration_seconds": 15.83,
+  "global_metrics": {
+    "total_reviews": 73945,
+    "global_mean_rating": 4.231,
+    "global_variance_rating": 0.761,
+    "global_stddev_rating": 0.872,
+    "avg_words_per_review": 36.27,
+    "avg_chars_per_review": 201.38,
+    "min_reviews_threshold": 30
+  },
+  "rating_distribution": {
+    "1.0": {
+      "count": 433,
+      "percentage": 0.59
+    },
+    "2.0": {
+      "count": 2913,
+      "percentage": 3.94
+    },
+    "3.0": {
+      "count": 10240,
+      "percentage": 13.85
+    },
+    "4.0": {
+      "count": 25933,
+      "percentage": 35.07
+    },
+    "5.0": {
+      "count": 34426,
+      "percentage": 46.56
+    }
+  },
+  "word_count_by_rating": {
+    "1.0": 39.9,
+    "2.0": 38.6,
+    "3.0": 36.7,
+    "4.0": 35.7,
+    "5.0": 36.3
+  },
+  "top_cities_summary": [
+    {
+      "City": "New Delhi",
+      "total_reviews": 4830,
+      "destination_count": 201,
+      "avg_rating": 4.29,
+      "rating_variance": 0.742,
+      "rating_stddev": 0.861
+    },
+    {
+      "City": "Mumbai",
+      "total_reviews": 3965,
+      "destination_count": 213,
+      "avg_rating": 4.25,
+      "rating_variance": 0.716,
+      "rating_stddev": 0.846
+    },
+    {
+      "City": "Bengaluru",
+      "total_reviews": 2629,
+      "destination_count": 154,
+      "avg_rating": 4.37,
+      "rating_variance": 0.635,
+      "rating_stddev": 0.797
+    },
+    {
+      "City": "Agra",
+      "total_reviews": 1981,
+      "destination_count": 37,
+      "avg_rating": 4.29,
+      "rating_variance": 0.745,
+      "rating_stddev": 0.863
+    },
+    {
+      "City": "Hyderabad",
+      "total_reviews": 1962,
+      "destination_count": 105,
+      "avg_rating": 4.28,
+      "rating_variance": 0.749,
+      "rating_stddev": 0.865
+    },
+    {
+      "City": "Jaipur",
+      "total_reviews": 1851,
+      "destination_count": 99,
+      "avg_rating": 4.22,
+      "rating_variance": 0.752,
+      "rating_stddev": 0.867
+    },
+    {
+      "City": "Kolkata",
+      "total_reviews": 1527,
+      "destination_count": 122,
+      "avg_rating": 4.18,
+      "rating_variance": 0.81,
+      "rating_stddev": 0.9
+    },
+    {
+      "City": "Udaipur",
+      "total_reviews": 1489,
+      "destination_count": 58,
+      "avg_rating": 4.25,
+      "rating_variance": 0.68,
+      "rating_stddev": 0.825
+    },
+    {
+      "City": "Chennai",
+      "total_reviews": 1245,
+      "destination_count": 146,
+      "avg_rating": 4.15,
+      "rating_variance": 0.785,
+      "rating_stddev": 0.886
+    },
+    {
+      "City": "Pune",
+      "total_reviews": 1167,
+      "destination_count": 134,
+      "avg_rating": 4.28,
+      "rating_variance": 0.722,
+      "rating_stddev": 0.85
+    }
+  ],
+  "top_destinations_summary": [
+    {
+      "City": "Bengaluru",
+      "Place": "Wonderla Amusement Park",
+      "review_count": 280,
+      "avg_rating": 4.782,
+      "rating_stddev": 0.5,
+      "bayesian_rating": 4.729,
+      "profile_text": "amusement park awesome words experience water rides amazing thrilling want wait line turn attractions plenty safe clean maintained restrooms changing facilities food decent traveled outside india lot say best gripe bangalore attractions kids wonder la certainly fills gap kilometers away city mysore road bidadi mind distance fun kids brother family enjoyed lot pool waters temperature controlled clean good food arrangements daughter fun pretty long journey considering fact travel city worth dear aporajita delighted know enjoyed park thank feedback shared team hope fun experience park brings best regards team wonderla dear devarora thank taking time review weather gotten better experiencing bit crowd constantly working crowd control hope soon best regards team dear yusu thank sharing valuable feedback delighted learn enjoyed wonderla experience hope quench day relaxation excitement brings wonderla happy memories best regards bimalendu definitely best amusement park india located km away center bangalore ride good water park excellent specially wave pool avoid going weekends crowded doesnt matter company family friends kids wonderful place nice rides food ambience water high clorine pools thats want wash away hot shower later day entering great place kids adults day outing dry wet types rides couple restaurants ice cream shops maintained park summer time usage goes hello jeet h thank sharing valuable feedback delighted learn enjoyed wonderla experience feedback patrons like inspires grow bigger better time hope memories hello nadeemmahmood thank sharing valuable feedback delighted learn enjoyed wonderla experience case suggestion add help improve services park share hello ryan thank sharing valuable feedback delighted learn enjoyed wonderla experience case suggestion add help improve services park share hello sandy_roadwarrior thank sharing valuable feedback delighted learn enjoyed wonderla experience case suggestion add help improve services park share hello srijata g thank sharing valuable feedback delighted learn enjoyed wonderla experience feedback support patrons like inspires grow bigger better time hope memories hello thank sharing valuable feedback regret inconvenience faced crowd wonderla satisfaction comfort visitors paramount importance weather pleasant hello voleti thank sharing valuable feedback delighted learn enjoyed wonderla experience case suggestion add help improve services park share hi papri thank sharing valuable feedback delighted learn enjoyed wonderla experience case suggestion add help improve services park share hi satya thank sharing valuable feedback delighted learn enjoyed wonderla experience case suggestion add help improve services park share"
+    },
+    {
+      "City": "Havelock Island",
+      "Place": "Radhanagar Beach",
+      "review_count": 199,
+      "avg_rating": 4.739,
+      "rating_stddev": 0.561,
+      "bayesian_rating": 4.672,
+      "profile_text": "awesome beach clear water sunset amazing crowded visit planning andaman trip beach awesome rated beaches world crowdy gave relaxing breathtaking experience beach beautiful vast weather troubled awesome beach neat clean wish visited morning instead noontime place visit recommend andaman beach doubt beautiful beach india globally sunset best time beach non commercialized beach best beach absolutely stunning place entire day place make memories beware monster mosquitoes good reppelent spray cream fail best beach visited india till date blue waters white sand leave mesmerized beauty beach fact vendors allowed sell beach help breath taking view sunset wonderful spent day spent hotel located near swim fantastic calm beach reminding alibagh clean hard sand beach ideal swimming watching sunset horizon food stalls changing rooms wash rooms clean large beach extremely scenic wait till sunset sky changes colour good place spend hours havelock key attraction havelock clean smooth beach amateurs swim beach commercial activities like scuba snorkeling beach making natural beautiful lockers changing facility sweet water bath beach cafe enjoyed thoroughly cleanest beach seen pure white sand cristal clear salty water amazing beach great surrounding locker shower services available reasonable rates crystal clear blue water white shining sand total green surrundings main attractions excellent beach excellent view bath sea life guards available addicted photograph dslr beach wait till sunset timing nice landscape picture excellent place beautiful sunset water clear little crowded great place soak feet water crowd kms havelock jetty beach accessible minute rickshaw drive beach fantastic rated best beaches asia pure white sand coupled green blue waters adjoining hillock makes love place beautiful entire family enjoyed alot scene sunset incredible pristine blue water clean white sand awesome sunset loved visit place havelock island place chill enjoy beauty ocean loves nature watch horizon spend hours radhanagar longest stretch swm friendly beach beaches havelock rocky lot sitting spaces available approach beach beach eco changing huts swimmers lifeguard station spend hour prefer playing beach closes pm public places old people sit changing rooms walk long distance beach changing rooms spent evening radhanagar beach beautiful places sand really golden soft visit radhanagar beach andamans"
+    },
+    {
+      "City": "Mumbai",
+      "Place": "Kidzania Mumbai",
+      "review_count": 82,
+      "avg_rating": 4.793,
+      "rating_stddev": 0.515,
+      "bayesian_rating": 4.642,
+      "profile_text": "kai abbeelaf zank u sharing valuable feedback glad liked unique concept offer kidzania mumbai including role playing activities hope visiting possible kai mayumandy zank u sharing feedback experience visit kidzania mumbai happy know zaz experience enjoyed look forward visit regards kidzania mumbai kai rajashree w zank u giving chance host important event sons birthday happy know son friends lovely time overall zaz experience look forward kai santosh g glad hear enjoyed time zank u kind words look forward visit regards kidzania mumbai kai urzin p zank u sharing valuable feedback glad know zaz experience thoroughly enjoyed th visit th november children day expecting good rush kai usha v zank u writing feedback glad zaz experience visit kidzania mumbai happy kids enjoyed participating various role playing activities enacting real life scenarios kidzania place kids kid taken wonderland school package price rs kids supposed act like adults complete various tasks like doctor pilot earn kidzos super interesting place kids kids enjoy lot learn process mechanisms life earn spend lots activities lot waiting time activities make visit tiresome daughter fond kidzania visited times year super fun kidzania seeing becme beautician baking cakes making pizza kai amitsk zank u sharing valuable feedback happy know daughter enjoyed participating unique role play based activities kidzania zaz experience overall look forward visit regards kidzania mumbai kai kinnari zank u sharing valuable feedback happy kids zaz experience enjoyed look forward z u soon regards kidzania mumbai kai rahuljain zank u kind words praise glad know kids enjoyed time spent regards kidzania mumbai kai sharath b zank u sharing valuable feedback happy know kids enjoyed unique concept role playing activities kidzania zaz experience visit look forward visit regards kai shrutipardasani glad hear enjoyed time zank u kind words look forward visit regards kidzania mumbai kai travellingrocks zank u sharing valuable feedback glad know nephew enjoyed participating role play based activities visit kidzania truly happy zaz experience visit place kids parents worry bored rush good hours different place learning whicle playing theme kids enjoying hilt dont think child bored minute enter kidzania activities fun knowledge learning place visit place children mumbai kai gautam v zank u sharing valuable feedback regret enjoy time spent like chance speak experience share contact details info kidzania kai kamatsandeep zank u sharing feedback experience visit kidzania mumbai happy know zaz experience enjoyed look forward visit regards kidzania mumbai"
+    },
+    {
+      "City": "Lonavala",
+      "Place": "Della Adventure Park",
+      "review_count": 192,
+      "avg_rating": 4.693,
+      "rating_stddev": 0.667,
+      "bayesian_rating": 4.631,
+      "profile_text": "activity paintball swoop swing amazing cost problem stay amazing harry guide amazing behaviour friendly visit lonavla park fudge chiki good stay amazing amazing ride della adventures rocket ejector activity della visitor dear guest thank feedback important glad enjoyed experience adventure activities cater age groups bungee jumping experience hope dear guest thank sharing experience recent visit della adventure let opportunity update developments della start approach road property reconstructed concrete roads dear kunal appreciate taking time reviewing regret hear pleasant visit della adventure note feedback shall share respective team warm regards della wonderful place visit rides adraline rushers specially swoop swing times best thing life staff said della record disappointed bit expensive compare kind rides thrill good rides pay taking package like dirt bike dirt rally cars paint ball flying fox people working place greetings firstly thank taking time post review grind sprawling vacation secondly delighted day milestone memory lane hi karan thank review look forward seeing soon regards team della adventure park high rope high rope activity towers fun complete good assistance high tope group activity easy perfect place spend time friends enjoy adventure swoop swing rocket ejector gave super adrenaline rush place good big visited place friends th jan weekday queue ride highlight atv turned huge disappointment vehicles place popular various adventures activities located near lonavala good safety measures went place bungee jumping available great time quite better place weekend mumbai adventurous activities like bungee rappelling good food nice stay winters best time reminded cricket playing days excellent activities complete secured environment thank u tushar n team help enjoying n guiding activities resort good jimmy mistry created lovely property fun pleasure forgot pet loving people pet enter people creating nuisance rules regulations pets general manager came listening rocket ejecter land zopping flying fox good activites staff good supporting come enjoy rocket ejector best adventurous ride advisable marshal hiresh ghadge gre abhijeet vitekar rohit dhakol awesome people school trip school kids really enjoyed lot land zorbing thrilling rapelling jungle gym fun indoor games teachers kids food nice moat importantly hospitality really stunned seeing beautiful infrastructure created property huge allow private vehicles roam property chauffeur driven cars resort"
+    },
+    {
+      "City": "Khopoli",
+      "Place": "Imagica Theme Park",
+      "review_count": 267,
+      "avg_rating": 4.67,
+      "rating_stddev": 0.669,
+      "bayesian_rating": 4.626,
+      "profile_text": "awesome place lots rides movies great place visit friends family price little high way fine suggestion student awesome surely recommend amazing ride nitro scary enjoyed fullest mr india best beginning wer really disappointed imagica timing rides wer leave aftr giving feedback gave feedback help desk help desk really understanding evathng possible der big fan thrilling rides place visit place specially deep space nitro scream machine suggest place totally worth people love adventure rides cool place experience thrill adventure india favorite holiday destination enjoy indoor c shows thrill rides slides dear ankit thank sparing time review pleasure read amazing experience imagica guest satisfaction appreciation best reward receive endeavours glad dear arvind thankyou amazing stars good words happy wish seeing park best wishes team adlabs imagica dear ashish bhartia apologies delayed response regret inconvenience faced terms waiting long queues different rides attractions unfortunately holidays guests like visit imagica special days limit bookings online dear guest glad great experience imagica believe giving visitors spell bounding experience international standards leaves memories cherish lifetime hope soon regards team imagica dear guest thank review glad exciting experience imagica rides conceptualized motive giving guests thrilling international experience right homeland happy learn dear guest thank sparing time review pleasure read amazing experience imagica forwarded valuable feedback park teams certainly strive make improvements basis dear sam b happy great day imagica imagica offer spellbinding experience international standards leaves memories cherish lifetime happily note experience imagica wonderful dear shagun thank recommending happy note adventure lover feels pleasure share recently launched adlabs annual super saver pass pass entitles visit imagica aquamagica good place visit huge place rides good themes conceptualized went tuesday crowded ticket price days e plus taxes comes rs better got discount august cost effective people think avail lazy sundays free bus ride turning package bus moves slowly took half hrs great fun family friends specially designed games rides add world class touch park favorite mr india alibaba thrive rides designed ages enjoyment parents kids enjoy ride greetings aravpune thank taking time review tripadvisor pleased hear enjoyed experience imagica hope soon friends family holiday adlabs imagica greetings sudhaa thank invaluable comments understand experience satisfactory apologise inconvenience happy share grievances order help hey kamal g thank reviewing glad note pleased visit imagica imagica offer variety rides attractions different rides leaving completely different experiences mr india imagica certainly good theme park indian standards rides shows unique compared highly rides focussed theme parks standing queue shows irritating task especially"
+    },
+    {
+      "City": "Kochi (cochin)",
+      "Place": "Wonderla Amusement Park",
+      "review_count": 68,
+      "avg_rating": 4.779,
+      "rating_stddev": 0.452,
+      "bayesian_rating": 4.611,
+      "profile_text": "dear mr ajeya greetings wonderla like thank giving valuable feedback recent visit amusement park pleased appreciation park hope satisfy dear mr arsh greetings wonderla kochi thank taking time share experience wonderla kochi trip advisor choosing park recent outing pleased appreciation park dear mr bharat greetings wonderla kochi thank taking time share experience wonderla kochi trip advisor choosing park recent outing pleased appreciation park dear mr navanith greetings wonderla like thank giving valuable feedback recent visit amusement park glad wonderful time wonderla pleased appreciation excellent amusement park kerala south india suitable ages highlights park cleanliness excellent amusement park visited number rides wonderla compared parks ticket fair little big explore excellent park wonderful time wonderla friends pls aware weekends long queue ride surely u enjoy rides better plan weekday possible u wonder good place relax daily routine work life excellent visit family friends hi deensjoseph thank sharing valuable feedback delighted learn enjoyed wonderla experience case suggestion add help improve services park share huge amusement theme park enthusiast proud say wonderla pretty close live best park visited india visited em including imagica ramoji wonderla banglore gave place arguably best amusement paek india avoid visiting weekends huge rush try visiting tuesday wednesdays fares higher weekends make point visit groups u u know evenig rides shows pools dear mr jithesh greetings wonderla like thank giving valuable feedback recent visit amusement park glad know wonderful time amusement park pleased dear mr junoj greetings wonderla like thank giving valuable feedback recent visit amusement park glad wonderful time wonderla noted suggestions areas dear mr justin greetings wonderla thank choosing park recent outing gives immense happiness know enjoyed facilities service thank taking time share experience family enjoyed water slides dry rides rope way drawback food allow outside food food available inside park pathetic proper measures care food good rides planned clean surroundings issue food lunch good experience tea snacks restaurant near wave pool pathetic queue ordered paid items available staff hello pnikhil thank sharing valuable feedback delighted learn enjoyed wonderla experience case suggestion add help improve services park share awesome amusement park kerala state risky rides includes dry rides water rides best rides park water slides good place fun exictment thrill coming dear mr jacob greetings wonderla thank choosing park recent outing thank taking time share experience look forward welcoming soon warm regards ravikumar general manager"
+    },
+    {
+      "City": "Jaipur",
+      "Place": "Birla Mandir Temple",
+      "review_count": 106,
+      "avg_rating": 4.708,
+      "rating_stddev": 0.585,
+      "bayesian_rating": 4.603,
+      "profile_text": "beautiful temple lakshi narayan near round nice mandapa hall statue deity big beautifully carvedout birla mandir jaipur constructed heart city b birla foundation birla mandir proud architectural landmark jaipur dedicated lord vishnu goddess lakshmi temple known lakshmi narayan birla temple situated middle jaipur city temple known god lakshmi narayana darshan pray god lakshmi narayana photography temple view time visit say built attractions location ideal temple atmosphere quiet peaceful avoid going good entirely white marble architecture good contains nice carvings makes nice break sounds congestion jaipur grounds leading clean nicely kept views entry fee gr temple usual birlas white marbles divine feel temple located prime locality family friends everybody enjoy think camera mobile restricted place divine extensive use marble carving really wants intricately beautiful marble carvings ranakpur jain temple tight schedule jaipur felt blessed visit temple marble neat temple ample time darshan located near moti dungari veshnov temple best thing temple white marble beautiful visit jaipur marble sculptured temple built birlas huge temple foothill fort complete souvenirs purchased stalls temple complex car parking place really good old generation younger ones poojaa gods bhakti kind stuff situated small hillock gives good view city verandah breezy evenings darshan closes reopens closes pm beautiful idol temple located comfotable location great mandir huge architecture n lovely idol laxmi narayan n grand statue lord shiva garden great n beautiful neat n maintained garden teh true beauty temple really beautiful witha beautiful sculptureof radha krishna ji basically radha krishna temple n fully white color temple stunning lots white marble wall engravings black red facial features ornate cornices real worshipping happening tourists monument temple worth visit temple white colour symbol peace architecture awesome temple attractive place tourists beautiful temple lord vishnu goddes laxmi temple white marble sense calmness comes inside temple huge temple managed photography allowed visit jaipur beautiful temple maintained evening arathi p good crowded miss panipuri pavpaji outside temple best example coexisting seen hindu temple architecture carved homage buddhists muslims christians welcome treated equally beautiful place great place looks good skip time pretty difficult walk shoes"
+    },
+    {
+      "City": "Khopoli",
+      "Place": "Imagica Water Park",
+      "review_count": 142,
+      "avg_rating": 4.676,
+      "rating_stddev": 0.749,
+      "bayesian_rating": 4.598,
+      "profile_text": "awesome experience good customer service transport service main awesome service lifeguards best visit life enjoyed water visit soon thanks aqua nice staff nice place dear drdhirajjumbad thankyou reviewing trip advisor taken note feedback share rides pirate bay operational sunday discontinued pirate bay mid noon purely safety reasons little dear guest thank sparing time review pleasure read amazing experience imagica believe giving visitors spell bounding experience international standards leaves memories cherish dear guest thank taking time review created experience international standards leave memories cherish lifetime rides conceptualized motive giving guests unique dear guest thanks ton review happy exciting experience aquamagica yes rides conceptualized motive giving guests thrilling new experience witnessed dear guest thanks ton review happy magical day aquamagica built international standard water park guests great experience rides aquamagica designed thrilling fun dear ravi highly appreciate feedback thank taking time review providing guests best possible experience service mission noted feedback forwarded concerned dear ritu glad great experience imagica guest satisfaction appreciation best reward receive endeavours glad succeeded hope soon regards team imagica dear tejas l thankyou reviewing trip advisor happy note thatyou aquamagica good feel happy inform recently launched express tickets helps cut queue wait times fully enjoyed imgica water park behaviour imgica staaf vist intresting rides good place day trip family near pune mumbai ride amazing unique food good upper looking pockets staff supporting great experience aqua imagica really love water water slide visit place u carry ur costume sell costly food good wave pool impressive dj songs group n friends like place slides maintained water quality fun floatsa pratap lifeguard help guided properly slide time imagica amazing water park slides good went snow park turned great visit mumbai pune like place slides unique different interesting love park love waves pool shirt music good impressive loppy woppy zip zap zoom swirl whirl best rides pleasant day spent friends staff good operative enjoyed day refer relatives visist awesome place hope superbly created team aqua friends really enjoyed slides little bit costly worth theme park miss water park really got carzy ride fun thing didnt like thw wave pool small deep exprience water park transport good reduce prizes realy fun today loopy woopy best rides visit family rides nice"
+    },
+    {
+      "City": "Aluva",
+      "Place": "Seasonz India",
+      "review_count": 44,
+      "avg_rating": 4.841,
+      "rating_stddev": 0.428,
+      "bayesian_rating": 4.594,
+      "profile_text": "booked honeymoon package seasonz india month dec days best package terms money offering given ramya trip kerala apprehension regarding safety kind dear sir greetings seasonz india holidays thank fantastic feedback happy know fully satisfied trip promise good work going feel free contact excellent service seasons india team entire trip wonderful good hospitality easy check altogether fabulous really thank heart wonderful service provided people big thanks soumya timely help day night ready help couples hyderabad worrying language thank sir glad know liked service regards khushi thanks review delighted booking tour right decision family good time thanks feedback choosing tour regards khushi travel agent mr shamil gud friendly person struggle tour pakg team leader sheethal mam gud power person thanks mr shamil sheethal mam awesome experience cordial service visited manner thekkady houseboat cherai beach enjoyed thoroughly dear guest thank rating tripadvisor happy know family really enjoyed goa tour package really feel honored kind comments appreciate took time share dear guest thanks taking time sharing impression travelers happy hear enjoyed time kerala hope soon regards sindhu panicker khushi dear sir greetings seasonz india holidays happy awesome experience booking seasonz india holidays expectations update mr siraj mr sunil reward thank resorts good house boat satisfied disturbed little heavy air night moved mid night driver guide excellent consultant excellent surprise plan family worried service mr shamil team happy expected really worth money paid entire trip starting kochi airport munnar alleppy thanks seasonzindia making trip amazingly making trip memorable journey new life wonderful experience family place kerala beauty munnar includes tea gardens adventure park exciting dear guest thanks leaving wonderful review glad family loved services dedicated staff pleased learn high praise work diligently provide great encouragement impressed seasons team great trip kerala team help excellent food ambience girls gang thank saftery security provided u nice tour organizers representative sheetal cooperative helpful hotel rooms amenities provided excellent extra hidden charges nice service planned honeymoon god country knew way kerala using driver usually traveler train bus country limited started dear guest great hear memorable stay thank praising service invest lot time effort train team ensure highest level personalized service thanks letting"
+    },
+    {
+      "City": "New Delhi",
+      "Place": "Select Citywalk",
+      "review_count": 56,
+      "avg_rating": 4.786,
+      "rating_stddev": 0.456,
+      "bayesian_rating": 4.592,
+      "profile_text": "biggest mall delhi brands roof enjoy various events organised restaurants awesome food dear guest absolutely thrilled hear glad hear enjoy exploring various stores mall great line festive season visit soon happy shopping regards team select citywalk dear guest thank lovely review kind words truly motivate delighted know enjoyed time select citywalk await pleasure opportunity greet hosts visit dear guest thank lovely review words motivate perform better delighted learn great time shopping select citywalk glad loved ambience offer look delhi wants shopping visit mall seen malls abroad sis good mall superb ambiance spread big area awesome food court multi national brands houses inter national brand outlets mall looks pretty organized planned festive occasions decorated showcases unmatched creativity second home need eat select city walk need shop select city walk need spa select city walk need haircut select city walk need gym select city walk need drinks select select citywalk definitely best mall new delhi took auto chittaranjan park fare rs easy locate mgf metropolitan mall inside feel dear guest glad know enjoyed day select citywalk pleasure serve comment motivates better visit fun filled evening thanks team select citywalk dear guest thank review delighted learn enjoyable dining shopping experience shopping center team delighted hear compliments exciting events coming stay tuned look dear guest thank wonderful review delighted know select citywalk amazing organised glad flatter range international inidan brands decor eateries visit soon long time good food complaint service quality food ambience great waiting minutes mall pleasure visit clean crowded weekends interconnected dlf mall visitors enjoy brands available food court restaurants great lapse time parking staff dear guest thank review getting appreciation shoppers truly humbling glad learn innovative concepts like flea market enjoyed look forward welcoming soon shopping dear guest thank review glad shopping center perfect place spend time strive provide shoppers fulfilling shopping experience glad came visit soon shopping dear guest thank taking time review delighted learn enjoy ambiance dining thoroughly chance try new restaurants food court mysquare look forward gone twice select citywalk awesome time brands clothes good electronic collection good cinema theatres food restaurants gone friends time went like nice place great shopping extravahanza lp showroom biggest seen gant guess tomy promod showrooms r good prefeered barista coffee follwed lunch awesom food talk food court followed ice cream gelato vinto later lovely place shopping major brands items refreshed continuously lovely ambience place needed grocery baby items convenient mall open late variety shops spas fantastic"
+    }
+  ]
+}

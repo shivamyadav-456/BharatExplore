@@ -1,0 +1,48 @@
+# Python bytecode
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+
+# Environments
+.venv/
+env/
+venv/
+ENV/
+
+# ---- Raw & Full-Pipeline Data (large; not committed) ----
+# Raw source files — must be downloaded locally before running pipeline
+data/raw/*.zip
+data/raw/*.csv
+
+# Full cleaned dataset (14 MB+ — not needed by dashboard at serve time)
+data/processed/
+
+# Model artefacts
+data/models/*.pkl
+data/models/*.joblib
+
+# Spark warehouse / temp
+data/spark_warehouse/
+
+# ---- Dashboard-required Parquet files (small; COMMITTED) ----
+# These are produced by: python scripts/run_pipeline.py --dev
+# They ARE tracked so Streamlit Community Cloud can serve the dashboard.
+# Un-comment the lines below ONLY if you want to exclude them (breaks cloud deploy):
+# data/analytics/*.parquet
+
+# ---- Keep directory stubs ----
+!data/raw/.gitkeep
+!data/processed/.gitkeep
+!data/analytics/.gitkeep
+!data/models/.gitkeep
+
+# IDE and OS
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# Testing and Streamlit secrets
+.pytest_cache/
+.streamlit/secrets.toml

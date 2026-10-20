@@ -1,0 +1,35 @@
+# ============================================================
+# BharatExplore — Python Dependencies
+# ============================================================
+# DEPLOYMENT NOTE (Streamlit Community Cloud):
+#   PySpark requires a JVM. Streamlit Community Cloud does NOT
+#   provide Java by default. To deploy there, the PySpark
+#   pipeline must be run locally first and its Parquet output
+#   files committed to the repository. The dashboard then runs
+#   entirely on pandas/sklearn/scipy — no Spark needed at serve time.
+#   See: packages.txt for system-level apt dependencies (if needed).
+#
+# LOCAL DEVELOPMENT: All packages below are required.
+# ============================================================
+
+# --- Big Data Processing (LOCAL only; not used at Streamlit serve time) ---
+pyspark>=3.5.0
+
+# --- Data Processing ---
+pandas>=2.0.0
+numpy>=1.24.0
+pyarrow>=14.0.0          # Required for Parquet I/O (used by dashboard)
+
+# --- Machine Learning & Statistics ---
+scikit-learn>=1.3.0      # TF-IDF vectorizer, cosine similarity
+scipy>=1.10.0            # Statistical tests (ANOVA, Kruskal-Wallis, etc.)
+
+# --- NLP & Sentiment ---
+nltk>=3.8.0              # VADER lexicon (vader_lexicon corpus auto-downloaded)
+
+# --- Dashboard & Visualisation ---
+streamlit>=1.30.0
+plotly>=5.15.0
+
+# --- Testing ---
+pytest>=7.4.0

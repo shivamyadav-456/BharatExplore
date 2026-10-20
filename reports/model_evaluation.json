@@ -1,0 +1,119 @@
+{
+  "evaluation_timestamp": "2026-10-20T10:10:43Z",
+  "duration_seconds": 0.15,
+  "methodology": {
+    "type": "Content-Based Hybrid Multi-Persona Diagnostic",
+    "scoring_components": [
+      "TF-IDF Cosine Similarity",
+      "Bayesian Adjusted Rating",
+      "VADER Sentiment Valence",
+      "Review Volume"
+    ],
+    "top_k_evaluated": 10,
+    "min_reviews_filter": 30
+  },
+  "system_diagnostics": {
+    "total_destinations_catalog": 7798,
+    "distinct_destinations_recommended_across_personas": 55,
+    "catalog_coverage_percentage": 0.71,
+    "novelty_vs_popularity_baseline_pct": 90.91
+  },
+  "persona_evaluations": [
+    {
+      "persona": "History & Heritage",
+      "results_returned": 10,
+      "avg_match_score": 56.76,
+      "avg_star_rating": 4.35,
+      "avg_review_count": 249.5,
+      "unique_cities_in_top_k": 10,
+      "top_recommended_places": [
+        "Amber Fort",
+        "Mehrangarh Fort",
+        "Mysore Palace (amba Vilas)"
+      ]
+    },
+    {
+      "persona": "Nature & Scenic",
+      "results_returned": 10,
+      "avg_match_score": 52.97,
+      "avg_star_rating": 4.55,
+      "avg_review_count": 146.8,
+      "unique_cities_in_top_k": 8,
+      "top_recommended_places": [
+        "Betab Valley",
+        "Lalbagh Botanical Garden",
+        "Banjhakri Water Falls"
+      ]
+    },
+    {
+      "persona": "Spiritual Pilgrim",
+      "results_returned": 10,
+      "avg_match_score": 53.89,
+      "avg_star_rating": 4.49,
+      "avg_review_count": 228.2,
+      "unique_cities_in_top_k": 8,
+      "top_recommended_places": [
+        "Lotus Temple",
+        "Golden Temple",
+        "Iskcon Temple Bangalore"
+      ]
+    },
+    {
+      "persona": "Coastal & Beach",
+      "results_returned": 10,
+      "avg_match_score": 59.07,
+      "avg_star_rating": 4.53,
+      "avg_review_count": 92.7,
+      "unique_cities_in_top_k": 10,
+      "top_recommended_places": [
+        "Radhanagar Beach",
+        "Laxmanpur Beach",
+        "Marari Beach"
+      ]
+    },
+    {
+      "persona": "Adventure Trekker",
+      "results_returned": 10,
+      "avg_match_score": 51.83,
+      "avg_star_rating": 4.42,
+      "avg_review_count": 136.6,
+      "unique_cities_in_top_k": 10,
+      "top_recommended_places": [
+        "Della Adventure Park",
+        "Triund Hill",
+        "Wonderla Amusement Park"
+      ]
+    },
+    {
+      "persona": "Wildlife Enthusiast",
+      "results_returned": 10,
+      "avg_match_score": 56.68,
+      "avg_star_rating": 4.1,
+      "avg_review_count": 85.2,
+      "unique_cities_in_top_k": 9,
+      "top_recommended_places": [
+        "Bannerghatta National Park",
+        "Keoladeo National Park",
+        "Sanjay Gandhi National Park"
+      ]
+    }
+  ],
+  "baseline_benchmark": {
+    "baseline_type": "Bayesian Rating Ranking with Min Reviews",
+    "top_places": [
+      "Wonderla Amusement Park",
+      "Radhanagar Beach",
+      "Kidzania Mumbai",
+      "Della Adventure Park",
+      "Imagica Theme Park",
+      "Wonderla Amusement Park",
+      "Birla Mandir Temple",
+      "Imagica Water Park",
+      "Seasonz India",
+      "Select Citywalk"
+    ],
+    "avg_baseline_rating": 4.75,
+    "avg_baseline_reviews": 143.6
+  },
+  "academic_disclosure": "Because this public dataset contains anonymous unlinked reviews without persistent user profiles, recommendation evaluation is performed via content relevance, coverage, and rank stability diagnostics rather than fabricating simulated user click logs for collaborative-filtering precision/recall."
+}

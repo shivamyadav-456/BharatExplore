@@ -1,0 +1,15 @@
+[theme]
+primaryColor = "#0F766E"           # Deep Teal / Forest Green accent
+backgroundColor = "#F8FAF8"        # Warm soft off-white background
+secondaryBackgroundColor = "#FFFFFF" # Crisp white for cards/sidebar
+textColor = "#1E293B"               # Deep charcoal for readable typography
+font = "sans serif"
+
+[server]
+headless = true
+enableCORS = false
+enableXsrfProtection = true
+maxUploadSize = 600
+
+[browser]
+gatherUsageStats = false
