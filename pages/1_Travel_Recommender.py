@@ -99,18 +99,10 @@ if "rec_results" not in st.session_state:
     st.session_state.rec_results = None
 if "baseline_results" not in st.session_state:
     st.session_state.baseline_results = None
+if "rec_form_version" not in st.session_state:
+    st.session_state.rec_form_version = 0
 
-
-def _reset_preferences():
-    """Clears all saved preferences and results, returning to the empty state."""
-    st.session_state.submitted_prefs = None
-    st.session_state.rec_results = None
-    st.session_state.baseline_results = None
-    # Clear any form widget state so defaults are used fresh
-    for key in list(st.session_state.keys()):
-        if key.startswith("rec_form_"):
-            del st.session_state[key]
-
+version = st.session_state.rec_form_version
 
 # ── Preference Form ─────────────────────────────────────────────────────────
 st.markdown("### 🎯 Set Your Travel Preferences")
@@ -119,7 +111,7 @@ st.caption(
     "Changing a control does *not* update results until you submit."
 )
 
-with st.form("recommender_form", clear_on_submit=False):
+with st.form(f"recommender_form_{version}", clear_on_submit=False):
     col1, col2 = st.columns([1, 1])
 
     with col1:
@@ -127,14 +119,14 @@ with st.form("recommender_form", clear_on_submit=False):
             "📍 Preferred City / Region",
             cities_list,
             index=0,
-            key="rec_form_city",
+            key=f"rec_form_city_{version}",
             help="Select a specific city or leave as 'All Cities' to search nationwide.",
         )
         selected_interests = st.multiselect(
             "✨ Desired Experiences & Themes (optional)",
             interests_list,
             default=[],
-            key="rec_form_interests",
+            key=f"rec_form_interests_{version}",
             help=(
                 "Select one or more themes to personalise results using TF-IDF text similarity. "
                 "Leave empty to rank by Bayesian rating and sentiment only."
@@ -144,27 +136,27 @@ with st.form("recommender_form", clear_on_submit=False):
             "🔍 Custom Search Keywords (optional)",
             value="",
             placeholder="e.g. peaceful sunset boating photography lake views",
-            key="rec_form_query",
+            key=f"rec_form_query_{version}",
         )
 
     with col2:
         min_rating = st.slider(
             "⭐ Minimum Average Rating",
             1.0, 5.0, 3.5, 0.1,
-            key="rec_form_min_rating",
+            key=f"rec_form_min_rating_{version}",
             help="Destinations with an average rating below this threshold are excluded.",
         )
         min_reviews = st.slider(
             "📊 Minimum Review Count",
             5, 200, 15, 5,
-            key="rec_form_min_reviews",
+            key=f"rec_form_min_reviews_{version}",
             help="Ensures recommendations have sufficient reviewer evidence.",
         )
         top_n = st.select_slider(
             "🔢 Number of Results",
             options=[5, 10, 15, 20, 25],
             value=10,
-            key="rec_form_top_n",
+            key=f"rec_form_top_n_{version}",
         )
 
     with st.expander("⚙️ Advanced: Scoring Weight Configuration"):
@@ -174,13 +166,13 @@ with st.form("recommender_form", clear_on_submit=False):
         )
         w_col1, w_col2, w_col3, w_col4 = st.columns(4)
         with w_col1:
-            w_sim = st.slider("Text Similarity", 0.0, 1.0, 0.40, 0.05, key="rec_form_w_sim")
+            w_sim = st.slider("Text Similarity", 0.0, 1.0, 0.40, 0.05, key=f"rec_form_w_sim_{version}")
         with w_col2:
-            w_rating = st.slider("Bayesian Rating", 0.0, 1.0, 0.35, 0.05, key="rec_form_w_rating")
+            w_rating = st.slider("Bayesian Rating", 0.0, 1.0, 0.35, 0.05, key=f"rec_form_w_rating_{version}")
         with w_col3:
-            w_sent = st.slider("Sentiment Valence", 0.0, 1.0, 0.15, 0.05, key="rec_form_w_sent")
+            w_sent = st.slider("Sentiment Valence", 0.0, 1.0, 0.15, 0.05, key=f"rec_form_w_sent_{version}")
         with w_col4:
-            w_pop = st.slider("Review Volume", 0.0, 1.0, 0.10, 0.05, key="rec_form_w_pop")
+            w_pop = st.slider("Review Volume", 0.0, 1.0, 0.10, 0.05, key=f"rec_form_w_pop_{version}")
 
     submit_col, reset_col = st.columns([3, 1])
     with submit_col:
@@ -199,7 +191,10 @@ with st.form("recommender_form", clear_on_submit=False):
 
 # ── Handle form actions (outside the form block) ────────────────────────────
 if reset_clicked:
-    _reset_preferences()
+    st.session_state.submitted_prefs = None
+    st.session_state.rec_results = None
+    st.session_state.baseline_results = None
+    st.session_state.rec_form_version += 1
     st.rerun()
 
 if submitted:
@@ -330,7 +325,7 @@ else:
         st.markdown("#### ⚖️ Baseline Benchmark: Pure Bayesian Rating Ranking")
         st.caption(
             "Ranks destinations strictly by Bayesian-adjusted rating (no text personalisation). "
-            "Used for academic comparison to evaluate the personalisation benefit of TF-IDF + sentiment."
+            "Used as an unpersonalized benchmark to evaluate the personalisation benefit of TF-IDF text similarity and sentiment scoring."
         )
         if baseline is None or len(baseline) == 0:
             st.info("No baseline results available for the selected city and minimum review count.")

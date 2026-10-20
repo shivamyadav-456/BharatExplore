@@ -1,7 +1,7 @@
 """Hypothesis testing module for BharatExplore.
 
 Implements rigorous inferential statistical tests on review ratings, text lengths,
-and sentiment distributions following Mumbai University BDA Lab specifications.
+and sentiment distributions using robust parametric and non-parametric methods.
 """
 
 from typing import Any, Dict, List, Optional

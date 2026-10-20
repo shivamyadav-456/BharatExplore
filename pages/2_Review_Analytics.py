@@ -55,10 +55,13 @@ if "analytics_applied_sentiments" not in st.session_state:
     st.session_state.analytics_applied_sentiments = DEFAULT_SENTIMENTS
 if "analytics_applied_ratings" not in st.session_state:
     st.session_state.analytics_applied_ratings = DEFAULT_RATINGS
+if "analytics_filter_version" not in st.session_state:
+    st.session_state.analytics_filter_version = 0
 
+version = st.session_state.analytics_filter_version
 all_cities = ["All Cities"] + sorted(sample_reviews["City"].unique().tolist())
 
-with st.form("review_analytics_filter_form", clear_on_submit=False):
+with st.form(f"review_analytics_filter_form_{version}", clear_on_submit=False):
     f_col1, f_col2, f_col3 = st.columns(3)
 
     with f_col1:
@@ -68,7 +71,7 @@ with st.form("review_analytics_filter_form", clear_on_submit=False):
             "Filter City",
             all_cities,
             index=city_idx,
-            key="input_rev_city",
+            key=f"input_rev_city_{version}",
             help="Select 'All Cities' to analyze nationwide reviews or pick a specific hub.",
         )
     with f_col2:
@@ -76,7 +79,7 @@ with st.form("review_analytics_filter_form", clear_on_submit=False):
             "Sentiment Category (optional)",
             ["Positive", "Neutral", "Negative"],
             default=st.session_state.analytics_applied_sentiments,
-            key="input_rev_sentiment",
+            key=f"input_rev_sentiment_{version}",
             help="Leave empty to include all sentiment categories (Positive, Neutral, Negative).",
             placeholder="All Sentiments (leave blank for all)",
         )
@@ -85,7 +88,7 @@ with st.form("review_analytics_filter_form", clear_on_submit=False):
             "Star Rating (optional)",
             [1.0, 2.0, 3.0, 4.0, 5.0],
             default=st.session_state.analytics_applied_ratings,
-            key="input_rev_rating",
+            key=f"input_rev_rating_{version}",
             format_func=lambda r: f"{int(r)} ★" if r == int(r) else f"{r} ★",
             help="Leave empty to include all star ratings (1.0 to 5.0).",
             placeholder="All Ratings (leave blank for all)",
@@ -111,13 +114,7 @@ if reset_clicked:
     st.session_state.analytics_applied_city = DEFAULT_CITY
     st.session_state.analytics_applied_sentiments = []
     st.session_state.analytics_applied_ratings = []
-    # Clear form widget session keys so they re-initialize to defaults
-    if "input_rev_city" in st.session_state:
-        st.session_state.input_rev_city = DEFAULT_CITY
-    if "input_rev_sentiment" in st.session_state:
-        st.session_state.input_rev_sentiment = []
-    if "input_rev_rating" in st.session_state:
-        st.session_state.input_rev_rating = []
+    st.session_state.analytics_filter_version += 1
     st.rerun()
 
 if apply_clicked:

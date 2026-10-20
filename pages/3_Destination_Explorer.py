@@ -29,18 +29,33 @@ if dest_df is None:
     st.info("Please run the pipeline script:\n```bash\npython scripts/run_pipeline.py\n```")
     st.stop()
 
+if "dest_filter_version" not in st.session_state:
+    st.session_state.dest_filter_version = 0
+
+version = st.session_state.dest_filter_version
+
 # Search and Filters
-col1, col2, col3, col4 = st.columns([1.5, 1, 1, 1])
+col1, col2, col3, col4, col5 = st.columns([1.5, 1.1, 0.9, 0.9, 0.6])
 
 with col1:
-    search_term = st.text_input("🔍 Search Destination by Name", placeholder="e.g. Taj Mahal, Gateway, Qutub...")
+    search_term = st.text_input(
+        "🔍 Search Destination by Name",
+        placeholder="e.g. Taj Mahal, Gateway, Qutub...",
+        key=f"dest_search_{version}",
+    )
 with col2:
     all_cities = ["All Cities"] + sorted(dest_df["City"].dropna().unique().tolist())
-    selected_city = st.selectbox("Filter City", all_cities)
+    selected_city = st.selectbox("Filter City", all_cities, key=f"dest_city_{version}")
 with col3:
-    min_rating = st.slider("Min Rating", 1.0, 5.0, 3.5, 0.1)
+    min_rating = st.slider("Min Rating", 1.0, 5.0, 3.5, 0.1, key=f"dest_rating_{version}")
 with col4:
-    min_reviews = st.number_input("Min Reviews", min_value=1, max_value=500, value=15, step=5)
+    min_reviews = st.number_input("Min Reviews", min_value=1, max_value=500, value=15, step=5, key=f"dest_reviews_{version}")
+with col5:
+    st.write("")
+    st.write("")
+    if st.button("🔄 Reset", use_container_width=True, help="Reset all filters to defaults"):
+        st.session_state.dest_filter_version += 1
+        st.rerun()
 
 filtered = dest_df.copy()
 if search_term.strip():
@@ -90,7 +105,7 @@ if len(filtered) > 0:
     # Note on Map and Geographic Integrity
     st.info(
         "ℹ️ **Geographic Data Integrity Note:** The public Kaggle dataset provides city and place textual identifiers "
-        "without verified GPS coordinates. In adherence to academic integrity and data truthfulness rules, synthetic or "
+        "without verified GPS coordinates. In adherence to data integrity and transparency standards, synthetic or "
         "approximate GPS coordinates are intentionally NOT fabricated for map plotting."
     )
 else:

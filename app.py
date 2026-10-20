@@ -1,7 +1,7 @@
 """BharatExplore — Big Data-Powered Indian Travel Recommendation System.
 
 Executive Dashboard and Main Application Entry Point.
-Subject: Big Data Analysis Lab (CSL702), Mumbai University.
+Distributed Review Analytics & Hybrid Tourist Destination Recommendation for India.
 """
 
 import sys
@@ -92,8 +92,8 @@ with st.sidebar:
     st.markdown("### 🧭 BharatExplore")
     st.caption("Big Data Analytics & AI Travel Recommender")
     st.markdown("---")
-    st.markdown("**Academic Context:**")
-    st.markdown("• BE Computer Engineering, Sem VII\n• Mumbai University\n• Subject: BDA Lab (CSL702)\n• Experiment 11: Real-life Big Data Application")
+    st.markdown("**Platform Overview:**")
+    st.markdown("• Distributed Travel Intelligence\n• 7,798 Destination Profiles\n• Lexicon-Based NLP Sentiment\n• Inferential Statistical Engine")
     st.markdown("---")
     st.markdown("📊 **Engine:** PySpark 4.2.0 + Spark SQL")
     st.markdown("🤖 **Recommender:** Content-Based TF-IDF + Bayesian Confidence")
@@ -127,7 +127,7 @@ st.markdown(f"""
         <strong>Engine:</strong> Apache Spark (local[*]) &nbsp;|&nbsp;
         <strong>Last Validated:</strong> {timestamp}
     </div>
-    <div class="saffron-tag">Mumbai Univ • CSL702</div>
+    <div class="saffron-tag">BharatExplore • Intelligence Platform</div>
 </div>
 """, unsafe_allow_html=True)
 
@@ -282,4 +282,4 @@ with nav_col2:
 with nav_col3:
     st.warning("**🔬 Hypothesis Testing**\n\nOne-Way ANOVA, Kruskal-Wallis, Spearman correlation, and Welch's t-test with effect sizes.")
 with nav_col4:
-    st.error("**📋 Data Quality & Profiling**\n\nSchema validation, duplicate patterns, missing value analysis, and academic methodology.")
+    st.error("**📋 Data Quality & Profiling**\n\nSchema validation, duplicate patterns, missing value analysis, and data engineering methodology.")
