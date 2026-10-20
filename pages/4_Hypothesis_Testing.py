@@ -13,11 +13,11 @@ import plotly.express as px
 # Add project root to sys.path
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 
-from src.data_access import load_sentiment_sample
-from src.hypothesis_testing import (
-    run_city_rating_comparison_test,
-    run_review_length_correlation_test,
-    run_sentiment_rating_association_test,
+from src.data_access import (
+    get_cached_city_rating_test,
+    get_cached_correlation_test,
+    get_cached_sentiment_association_test,
+    load_sentiment_sample,
 )
 
 st.set_page_config(page_title="Hypothesis Testing — BharatExplore", page_icon="🔬", layout="wide")
@@ -106,7 +106,7 @@ if "Test 1" in selected_test:
     top_n = st.slider("Number of Top Tourist Hubs to Compare", 3, 10, 5)
 
     with st.spinner("Computing statistical test on active dataset..."):
-        res = run_city_rating_comparison_test(sample_reviews, top_n_cities=top_n, alpha=alpha)
+        res = get_cached_city_rating_test(top_n_cities=top_n, alpha=alpha)
 
     badge_class = _decision_badge(res["decision"])
     st.markdown(f"""
@@ -172,7 +172,7 @@ if "Test 1" in selected_test:
 elif "Test 2" in selected_test:
     st.subheader("📝 Hypothesis Test 2: Review Length vs Rating Correlation")
     with st.spinner("Computing correlation on active dataset..."):
-        res = run_review_length_correlation_test(sample_reviews, alpha=alpha)
+        res = get_cached_correlation_test(alpha=alpha)
 
     badge_class = _decision_badge(res["decision"])
     st.markdown(f"""
@@ -212,7 +212,7 @@ elif "Test 2" in selected_test:
 elif "Test 3" in selected_test:
     st.subheader("⭐ Hypothesis Test 3: Sentiment Divergence (5-Star vs 1-Star)")
     with st.spinner("Executing Welch's t-test and Mann-Whitney U test..."):
-        res = run_sentiment_rating_association_test(sample_reviews, alpha=alpha)
+        res = get_cached_sentiment_association_test(alpha=alpha)
 
     if "error" in res:
         st.error(f"Could not run test: {res['error']}")

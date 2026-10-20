@@ -18,7 +18,7 @@ import pandas as pd
 # Add project root to path
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 
-from src.data_access import get_recommender
+from src.data_access import get_destination_cities, get_recommender
 from src.recommendation_engine import CURATED_INTERESTS
 
 st.set_page_config(page_title="Travel Recommender — BharatExplore", page_icon="🧭", layout="wide")
@@ -86,7 +86,7 @@ if recommender is None:
     st.stop()
 
 dest_df = recommender.dest_df
-cities_list = ["All Cities"] + sorted(dest_df["City"].dropna().unique().tolist())
+cities_list = get_destination_cities()
 interests_list = list(CURATED_INTERESTS.keys())
 
 # ── Session state: store submitted preferences and results ──────────────────

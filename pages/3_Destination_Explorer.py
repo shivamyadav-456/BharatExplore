@@ -9,7 +9,7 @@ import plotly.express as px
 # Add project root to sys.path
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 
-from src.data_access import load_destination_profiles
+from src.data_access import get_destination_cities, load_destination_profiles
 
 st.set_page_config(page_title="Destination Explorer — BharatExplore", page_icon="🗺️", layout="wide")
 
@@ -44,7 +44,7 @@ with col1:
         key=f"dest_search_{version}",
     )
 with col2:
-    all_cities = ["All Cities"] + sorted(dest_df["City"].dropna().unique().tolist())
+    all_cities = get_destination_cities()
     selected_city = st.selectbox("Filter City", all_cities, key=f"dest_city_{version}")
 with col3:
     min_rating = st.slider("Min Rating", 1.0, 5.0, 3.5, 0.1, key=f"dest_rating_{version}")

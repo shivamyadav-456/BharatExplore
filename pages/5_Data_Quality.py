@@ -68,11 +68,11 @@ with c1:
     null_df = pd.DataFrame(null_rows)
     st.dataframe(null_df, use_container_width=True, hide_index=True)
 
-    st.error(
-        "⚠️ **Missing Data Disclosure (Date Column):** "
+    st.info(
+        "ℹ️ **Missing Data Disclosure (Date Column):** "
         "The `Date` column in the source dataset is 100% empty (null). "
-        "In accordance with strict scientific integrity rules, temporal trends, monthly fluctuations, "
-        "or seasonality analyses are intentionally NOT claimed or fabricated."
+        "In accordance with strict scientific integrity and data truthfulness principles, "
+        "temporal trends, monthly fluctuations, or seasonality analyses are intentionally omitted rather than fabricated."
     )
 
 with c2:

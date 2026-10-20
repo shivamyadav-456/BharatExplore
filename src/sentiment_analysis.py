@@ -5,6 +5,7 @@ scoring engine that handles valence shifters, negations, booster words, and
 computes continuous compound scores [-1.0, 1.0] and discrete sentiment labels.
 """
 
+from functools import lru_cache
 import math
 import re
 from typing import Any, Dict, List, Optional, Tuple
@@ -61,6 +62,7 @@ BOOSTERS = {
 }
 
 
+@lru_cache(maxsize=512)
 def score_text_sentiment(text: Optional[str]) -> Dict[str, Any]:
     """
     Computes VADER-style compound sentiment score [-1.0, 1.0] and sentiment category.

@@ -10,7 +10,7 @@ import plotly.graph_objects as go
 # Add project root to sys.path
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 
-from src.data_access import load_analysis_summary, load_sentiment_sample
+from src.data_access import get_unique_review_cities, load_analysis_summary, load_sentiment_sample
 from src.sentiment_analysis import score_text_sentiment
 
 st.set_page_config(page_title="Review Analytics — BharatExplore", page_icon="💬", layout="wide")
@@ -59,7 +59,7 @@ if "analytics_filter_version" not in st.session_state:
     st.session_state.analytics_filter_version = 0
 
 version = st.session_state.analytics_filter_version
-all_cities = ["All Cities"] + sorted(sample_reviews["City"].unique().tolist())
+all_cities = get_unique_review_cities()
 
 with st.form(f"review_analytics_filter_form_{version}", clear_on_submit=False):
     f_col1, f_col2, f_col3 = st.columns(3)
@@ -173,8 +173,9 @@ c1, c2 = st.columns(2)
 with c1:
     st.subheader("📊 Sentiment Score vs Star Rating")
     if len(filtered_df) > 0:
+        box_data = filtered_df if len(filtered_df) <= 5000 else filtered_df.sample(5000, random_state=42)
         fig_box = px.box(
-            filtered_df,
+            box_data,
             x="Rating",
             y="sentiment_compound",
             color="Rating",
